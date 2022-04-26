@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Youtube Video Downloader</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                  <img src="photo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                  HR Downloader
+                </a>
+              </div>
+        </div>
+    </nav>
+
+    <section>
+        <h1>Youtube Downloader</h1>
+        <div class="link-container">
+            <label for="">Video Link:</label>
+            <input type="text" class="link" name="link" placeholder="Enter Video Link" required>
+        </div>
+        <div class="format-container">
+            <label for="">Format:</label>
+            <select name="format" required>
+                <option selected disabled>Select Video Format</option>
+                <option value="mp3">Mp3</option>
+                <option value="mp4a">144</option>
+                <option value="360">360</option>
+                <option value="480">480</option>
+                <option value="720">720</option>
+                <!-- <option value="1080">1080</option>
+                <option value="4k">4k</option>
+                <option value="8k">8k</option> -->
+            </select>
+        </div>
+        <div class="button-container">
+            <button class="btn" type="submit">Start</button>
+        </div>
+
+    </section>
+
+    <script>
+
+        $(".btn").click(function(){
+            var link = $(".link").val();
+            var format = $(".format").children("option:selected").val();
+            var src = "" + link + "=" + format + "";
+            download(link, format);
+        });
+
+        function download(link, format){
+            // Loading of API
+            $('.button-container').html('<iframe style="height:50px; border:none; overflow:hidden;" src="https://loader.to/api/button/?url='+ link + '&f=' + format + '"></iframe>');
+        }
+    </script>
+    
+</body>
+</html>
