@@ -1,6 +1,6 @@
 # YouTubeVideoDownloader
 
-#You can accent my website through below link:
+You can accent my website through below link:
 https://hemanga-rana.github.io/YouTubeVideoDownloader/
 
 Some Sceenshots of the site:
